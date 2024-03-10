@@ -1,4 +1,4 @@
-class Test
+oclass HelloWorld
 {
     public static void main(String []args)
     {
