@@ -22,7 +22,6 @@ pipeline {
                     sh '''
                     echo 'Buid Docker Image'
                     docker build -t sambhoite89/cicd-e2e:${BUILD_NUMBER} .
-                    REGISTRY_CREDENTIALS = credentials('docker-cred')
                     '''
                 }
             }
