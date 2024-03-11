@@ -22,6 +22,7 @@ pipeline {
                     sh '''
                     echo 'Buid Docker Image'
                     docker build -t sambhoite89/cicd-e2e:${BUILD_NUMBER} .
+                    REGISTRY_CREDENTIALS = credentials('docker-cred')
                     '''
                 }
             }
@@ -33,6 +34,7 @@ pipeline {
                     sh '''
                     echo 'Push to Repo'
                     docker push sambhoite89/cicd-e2e:${BUILD_NUMBER}
+                    REGISTRY_CREDENTIALS = credentials('docker-cred')
                     '''
                 }
             }
